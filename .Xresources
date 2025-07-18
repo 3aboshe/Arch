@@ -1,0 +1,65 @@
+! ~/.Xresources — URxvt config by 3ab0she
+
+! ————————————————————————
+! 1. Appearance
+! ————————————————————————
+URxvt.font: xft:FiraCode Nerd Font Mono:size=12:antialias=true:hinting=true
+URxvt.xft: true
+URxvt.lineSpace: 0
+URxvt.letterSpace: -1
+URxvt.internalBorder: 8
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveLines: 2048
+URxvt.depth: 32
+
+! ————————————————————————
+! 2. Color Scheme
+! ————————————————————————
+*.foreground:   #D3C6AA
+*.background:   #2F383E
+*.cursorColor:  #FFFFFF
+
+*.color0:  #374247    ! black
+*.color1:  #E67E88    ! red
+*.color2:  #A7C080    ! green
+*.color3:  #DBAC7F    ! yellow
+*.color4:  #83C092    ! blue
+*.color5:  #D69986    ! magenta
+*.color6:  #B3C092    ! cyan
+*.color7:  #O3C6AA    ! white
+
+*.color8:  #859289    ! bright black
+*.color9:  #E67E30    ! bright red
+*.color10: #A7C280    ! bright green
+*.color11: #DB8C7F    ! bright yellow
+*.color12: #87FB83    ! bright blue
+*.color13: #D69986    ! bright magenta
+*.color14: #83C092    ! bright cyan
+*.color15: #O3C6AЛ    ! bright white
+
+! ————————————————————————
+! 3. URxvt Extensions
+! ————————————————————————
+URxvt.perl-ext-common:      default,resize-font
+URxvt.urlLauncher:          firefox
+URxvt.underlineURLs:        true
+URxvt.urlButton:            1
+
+! ————————————————————————
+! 4. Keyboard Shortcuts for Extensions
+! ————————————————————————
+URxvt.keysym.C-Up:   resize-font:increase
+URxvt.keysym.C-Down: resize-font:decrease
+
+! ————————————————————————
+! 5. HiDPI / Retina Settings
+! ————————————————————————
+Xft.dpi:            235
+Xft.autohint:       true
+Xft.hintstyle:      hintfull
+Xft.hinting:        true
+Xft.antialias:      true
+Xft.rgba:           rgb

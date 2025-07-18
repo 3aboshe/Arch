@@ -1,0 +1,71 @@
+# ~/.config/i3/config — i3-gaps Config by 3ab0she
+
+# Set mod key to Super (Windows) key
+set $mod Mod4
+
+# Appearance
+gaps inner 4
+gaps outer 4
+
+# Hide titlebar for all windows (use border instead)
+for_window [class="^.*"] border pixel 2
+
+# Font for window titles and bar
+font pango:Fira Code Nerd Font 9
+
+# Colors (client.focused, client.unfocused, etc.)
+# Format: client.<state> <border> <background> <text> <indicator> <child_border>
+client.focused          #A7C080 #A7C080 #2F383E #A7C080 #A7C080
+client.focused_inactive #2F383E #2F383E #859289 #2F383E #2F383E
+client.unfocused        #2F383E #2F383E #859289 #2F383E #2F383E
+client.urgent           #E67E88 #E67E30 #FFFFFF #E67EBD #E67EBD
+client.placeholder      #2F383E #2F383E #859289 #2F383E #2F383E
+
+# Keyboard shortcuts
+
+## Launch terminal
+bindsym $mod+Return exec alacritty
+
+## Launch Firefox
+bindsym $mod+w exec firefox
+
+## Close focused window
+bindsym $mod+q kill
+
+## Dmenu / Rofi launcher
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+
+## Window focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+## Window move
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+## Resize windows (resize mode)
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+}
+
+# Floating windows
+touchpad: floating modifier $mod
+drag floating with $mod and left-click
+floating_minimum_size 450 458
+floating_maximum_size 1508 1538
+
+# Autostart applications
+exec --no-startup-id picom  # compositor for transparency
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec --no-startup-id nm-applet
+
+# End of config
